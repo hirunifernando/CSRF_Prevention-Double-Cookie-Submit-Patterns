@@ -4,7 +4,7 @@
 if(isset($_POST['username'],$_POST['password'])){
 	$uname = $_POST['username'];
 	$pwd = $_POST['password'];
-	if($uname == 'sanda' && $pwd == '123'){
+	if($uname == 'HDF' && $pwd == '123'){
 		echo 'Successfully logged in';
 		session_start();
 		$_SESSION['token'] = base64_encode(openssl_random_pseudo_bytes(32));
@@ -97,12 +97,12 @@ if(isset($_POST['username'],$_POST['password'])){
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" >
-						SESSION<input class="input100" type="text" name="token" value="<?php echo $_COOKIE['sessionCookie']; ?>" id="sessionCookie">
+						<input class="input100" type="hidden" name="token" value="<?php echo $_COOKIE['sessionCookie']; ?>" id="sessionCookie">
 						<span class="focus-input100"></span>
 					</div>
 					
 					<div class="wrap-input100 validate-input" >
-						CSRF<input class="input100" type="text" name="token" value="" id="token_to_be_added">
+						<input class="input100" type="hidden" name="token" value="" id="token_to_be_added">
 						<span class="focus-input100"></span>
 					</div>
 

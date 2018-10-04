@@ -39,31 +39,31 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" >
-					<input class="input100" type="text" name="post" value="<?php echo $_POST['updatepost']?>">
 
+					
 						
 						
 
-<?php
+					<?php
 
-require_once 'token.php';
-
-
-$val = $_POST["token"];
+					require_once 'token.php';
 
 
-if(isset($_POST['updatepost'])){
-	if(token::checkToken($val,$_COOKIE['csrfCookie'])){
-		echo "Hey ".$_POST['updatepost']." ";
-		
-	    
-	}
-	else{
-	echo "wrong".$_COOKIE['csrfCookie'];
-	}
-}
-?>
-	
+					$val = $_POST["token"];
+
+
+					if(isset($_POST['updatepost'])){
+						if(token::checkToken($val,$_COOKIE['csrfCookie'])){
+							echo $_POST['updatepost'];
+							
+							
+						}
+						else{
+						echo "wrong".$_COOKIE['csrfCookie'];
+						}
+					}
+					?>
+								
 				</form>
 			</div>
 		</div>
